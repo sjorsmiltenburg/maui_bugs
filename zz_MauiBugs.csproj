@@ -68,12 +68,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewModels\Bug2View.xaml.cs">
+	    <DependentUpon>Bug2View.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ViewModels\MainView.xaml.cs">
 	    <DependentUpon>MainView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewModels\Bug2View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\Bug1View.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
