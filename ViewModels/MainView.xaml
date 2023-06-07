@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="zz_MauiBugs.MainView">
+
+    <ScrollView BackgroundColor="Black">
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <FlexLayout BindableLayout.ItemsSource="{Binding MenuOptions}" Direction="Column" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Border Stroke="White" StrokeThickness="1"  Padding="5">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10"/>
+                                </Border.StrokeShape>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TappedCommand}"/>
+                                </Border.GestureRecognizers>
+                            <Label Text="{Binding Name}" TextColor="White"/>
+                            </Border>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </VerticalStackLayout>            
+        </HorizontalStackLayout>
+    </ScrollView>
+</ContentPage>
