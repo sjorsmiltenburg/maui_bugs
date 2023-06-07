@@ -1,4 +1,4 @@
-﻿namespace zz_MauiBugs.ViewModels
+﻿namespace zz_MauiBugs.Messages
 {
     internal class LoadViewMessage
     {

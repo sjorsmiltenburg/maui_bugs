@@ -1,6 +1,7 @@
 ﻿using BB.Maui.Services;
 using CommunityToolkit.Mvvm.Messaging;
 using System.Windows.Input;
+using zz_MauiBugs.Messages;
 
 namespace zz_MauiBugs.ViewModels
 {
