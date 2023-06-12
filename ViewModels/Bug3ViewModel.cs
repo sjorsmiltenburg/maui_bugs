@@ -1,25 +1,45 @@
-﻿namespace zz_MauiBugs.ViewModels
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows.Input;
+
+namespace zz_MauiBugs.ViewModels
 {
     public class Bug3ViewModel : BaseViewModel
     {
-        public List<MyItemVM> MyItems { get; set; } = new List<MyItemVM>();
+        public ObservableCollection<MyItemViewModel> MyItems { get; set; } = new ObservableCollection<MyItemViewModel>();
 
         public Bug3ViewModel()
         {
-            MyItems.Add(new MyItemVM("a"));
-            MyItems.Add(new MyItemVM("b"));
-            MyItems.Add(new MyItemVM("c"));
-            MyItems.Add(new MyItemVM("d"));
+            //calling the AddStuff method here creates a catastrophic exception
+            //AddStuff();
         }
-    }
 
-    public class MyItemVM
-    {
-        public MyItemVM(string text)
+
+        public ICommand CreateCommand
         {
-            Text = text;
+            get
+            {
+                return new Command(() =>
+                {
+                    //calling the AddStuff method here creates a Nullreferenceexception
+                    AddStuff();
+                });
+            }
         }
 
-        public string Text { get; set; }
+        private void AddStuff()
+        {
+            try
+            {
+                MyItems.Add(new MyItemViewModel("a"));
+                MyItems.Add(new MyItemViewModel("b"));
+                MyItems.Add(new MyItemViewModel("c"));
+                MyItems.Add(new MyItemViewModel("d"));
+            }
+            catch (Exception ex)
+            {
+                Debugger.Break();
+            }
+        }
     }
 }

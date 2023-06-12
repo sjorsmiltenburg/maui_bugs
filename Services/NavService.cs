@@ -45,29 +45,36 @@ namespace BB.Maui.Services
 
         public async Task NavigateTo(Type viewModelType, bool removeCurrentViewFromNavStack)
         {
-            Debug.WriteLine("NAV - Navigating to " + viewModelType.ToString());
-            if (_navigating)
+            try
+            {
+                Debug.WriteLine("NAV - Navigating to " + viewModelType.ToString());
+                if (_navigating)
+                {
+                    Debugger.Break();
+                    Debug.WriteLine("WARNING: double navigation detected");
+                }
+                _navigating = true;
+
+                var view = _viewCreationService.CreatePage(viewModelType);
+                if (view.BindingContext is BaseViewModel baseViewModel)
+                {
+                    await baseViewModel.Init();
+                }
+                await NavigateToView(view);
+
+                if (removeCurrentViewFromNavStack)
+                {
+                    //manipulating the nav stack before running InitAfterLoad because that method may also trigger a navigation
+                    RemoveLastView();
+                }
+
+                Debug.WriteLine($"navigating to {viewModelType.ToString()} finished");
+                _navigating = false;
+            }
+            catch (Exception e)
             {
                 Debugger.Break();
-                Debug.WriteLine("WARNING: double navigation detected");
             }
-            _navigating = true;
-
-            var view = _viewCreationService.CreatePage(viewModelType);
-            if (view.BindingContext is BaseViewModel baseViewModel)
-            {
-                await baseViewModel.Init();
-            }
-            await NavigateToView(view);
-
-            if (removeCurrentViewFromNavStack)
-            {
-                //manipulating the nav stack before running InitAfterLoad because that method may also trigger a navigation
-                RemoveLastView();
-            }
-
-            Debug.WriteLine($"navigating to {viewModelType.ToString()} finished");
-            _navigating = false;
 
         }
 
@@ -108,7 +115,6 @@ namespace BB.Maui.Services
                     }
                     await XamarinFormsNav.PushAsync(view, true);
                     var vm = view.BindingContext;
-
                 }
                 catch (Exception e)
                 {

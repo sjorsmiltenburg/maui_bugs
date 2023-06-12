@@ -1,8 +1,8 @@
 namespace zz_MauiBugs.ViewModels;
 
-public partial class Bug3View : ContentPage
+public partial class Bug4View : ContentPage
 {
-    public Bug3View()
+    public Bug4View()
     {
         InitializeComponent();
     }

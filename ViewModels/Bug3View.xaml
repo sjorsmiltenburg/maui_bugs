@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="zz_MauiBugs.ViewModels.Bug3View">
-    <ScrollView BackgroundColor="Black">        
-        <Border Stroke="yellow" StrokeThickness="3" x:Name="MyBorder">
-            <VerticalStackLayout>
-                <StackLayout BindableLayout.ItemsSource="{Binding MyItems}" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" Margin="0" Padding="0">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <Grid BackgroundColor="Black">
-                                <!-- this no longer works, resulting in the error: XFC0009 No property, bindableproperty or event found for ancestertype or mismatching type between value and property -->
-                                <Label Text="{Binding Text}" BackgroundColor="{Binding Source={RelativeSource AncestorType=Border}, Path=Stroke.Color}" TextColor="Wheat"/>
-                                <!-- this is my workaround -->
-                                <Label Text="{Binding Text}" TextColor="{Binding Source={x:Reference MyBorder}, Path=Stroke.Color}"  FontSize="50"/>
-                            </Grid>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
-            </VerticalStackLayout>
-        </Border>
+             x:Class="zz_MauiBugs.ViewModels.Bug3View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             >
+    <ScrollView BackgroundColor="Black" x:DataType="viewModels:Bug3ViewModel">
+        <VerticalStackLayout>
+            <Label Text="Provide better exception message when binding a normal list to a collecitonview that has IsGrouped=True"/>
+            <Button Text="create" Command="{Binding CreateCommand}" WidthRequest="150"/>
+            <CollectionView
+                ItemsSource="{Binding MyItems}"                 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="Fill" 
+                Margin="0" 
+                IsGrouped="True">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewModels:MyItemViewModel">
+                        <viewModels:MyItemView></viewModels:MyItemView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+        </VerticalStackLayout>
+
     </ScrollView>
 </ContentPage>

@@ -68,6 +68,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewModels\Bug4View.xaml.cs">
+	    <DependentUpon>Bug4View.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ViewModels\Bug3View.xaml.cs">
 	    <DependentUpon>Bug3View.xaml</DependentUpon>
 	  </Compile>
@@ -77,9 +80,15 @@
 	  <Compile Update="ViewModels\MainView.xaml.cs">
 	    <DependentUpon>MainView.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="ViewModels\MyItemView.xaml.cs">
+	    <DependentUpon>MyItemView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewModels\Bug4View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\Bug3View.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -87,6 +96,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\Bug1View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewModels\MyItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
