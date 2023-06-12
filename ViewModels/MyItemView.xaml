@@ -5,7 +5,6 @@
              x:DataType="viewModels:MyItemViewModel"
              xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs">
     <VerticalStackLayout BackgroundColor="DarkGreen"    >
-        <Label Text="{Binding Text}"/>
-        <!--<Image AutomationId="{Binding Text}" Source="dotnet_bot.png" WidthRequest="10" />-->
+        <Label Text="{Binding Text}"/>        
     </VerticalStackLayout>
 </ContentView>
