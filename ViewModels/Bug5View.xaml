@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug5View"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs">
+    <VerticalStackLayout>
+        <Label TextColor="White" Text="When on Windows and navigating back and calling "></Label>
+        <Label TextColor="White" Text="MyMediaElement.Handler?.DisconnectHandler(); "></Label>
+        <Label TextColor="White" Text="in Page_Unloaded as mentioned in the docs we get a catastrophic failure"></Label>
+    <toolkit:MediaElement 
+            x:Name="MyMediaElement"
+            HorizontalOptions="Fill" 
+            VerticalOptions="Fill" 
+            ShouldAutoPlay="True"
+            Source="https://bbmediaaccount-euwe.streaming.media.azure.net/3d1e6c3a-a871-40ed-9abc-abb6aa7fc801/BookaBooka%20-%20NGT%20-%20Waar%20is%20Lulu.ism/manifest(format=mpd-time-csf)"/>
+    </VerticalStackLayout>
+</ContentPage>

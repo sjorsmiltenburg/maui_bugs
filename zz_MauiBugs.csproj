@@ -61,6 +61,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -68,6 +69,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewModels\Bug5View.xaml.cs">
+	    <DependentUpon>Bug5View.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ViewModels\Bug4View.xaml.cs">
 	    <DependentUpon>Bug4View.xaml</DependentUpon>
 	  </Compile>
@@ -86,6 +90,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewModels\Bug5View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\Bug4View.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

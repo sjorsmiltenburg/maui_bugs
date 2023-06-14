@@ -17,6 +17,7 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 2", typeof(Bug2ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 3", typeof(Bug3ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 4", typeof(Bug4ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 5", typeof(Bug5ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {
