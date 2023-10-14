@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug7View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             x:DataType="viewModels:Bug7ViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="I would expect the left grid with Rowdefenition *,Auto,* not to allow the flexlayout to get out of screen bounds and start scrolling"/>
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*" ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid BackgroundColor="Black" Opacity="0.7" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
+
+            <Grid Grid.Row="1" Grid.Column="1" >
+                <Border StrokeThickness="5" Stroke="Blue" BackgroundColor="DarkBlue" Padding="0,20,0,40" Margin="0,0,0,50" WidthRequest="400">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="30"/>
+                    </Border.StrokeShape>
+                    <ScrollView Orientation="Vertical" x:Name="SettingsScrollView" VerticalScrollBarVisibility="Always" Margin="5">
+                        <FlexLayout BindableLayout.ItemsSource="{Binding FlexItems}" Direction="Column" Wrap="NoWrap" JustifyContent="SpaceBetween"  HorizontalOptions="Center" >
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid x:DataType="viewModels:Bug7ItemViewModel" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        
+
+                                        <!--<Grid Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Orange" IsVisible="{Binding Selected}"></Grid>-->
+                                        <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0"/>
+                                        <!--<Label Grid.Column="1" Text="{Binding Name}" FlowDirection="{Binding FlowDirection}"  FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" LineBreakMode="NoWrap"  IsVisible="{Binding Selected,Converter={converters:InverseBoolConverter}}" Margin="0,0,10,0"></Label>
+                                        <Label Grid.Column="1" Text="{Binding Name}" FlowDirection="{Binding FlowDirection}"  FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" LineBreakMode="NoWrap" TextColor="{StaticResource DarkColor}" IsVisible="{Binding Selected}" Margin="0,0,10,0"></Label>-->
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </ScrollView>
+                </Border>                
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="1*" ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid  BackgroundColor="Black" Opacity="0.7" Grid.RowSpan="3" Grid.ColumnSpan="3">
+                
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1"  >
+                <Border StrokeThickness="5" Stroke="{StaticResource LightColor}" BackgroundColor="{StaticResource DarkColor}" Padding="0,20,0,40" Margin="0,0,0,50" WidthRequest="400">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="30"/>
+                    </Border.StrokeShape>
+                    <ScrollView Orientation="Vertical"  VerticalScrollBarVisibility="Always" Margin="5">
+                        <FlexLayout BindableLayout.ItemsSource="{Binding FlexItems}" Direction="Column" Wrap="NoWrap" JustifyContent="SpaceBetween"  HorizontalOptions="Center" >
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid x:DataType="viewModels:Bug7ItemViewModel" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>                                        
+
+                                        <!--<Grid Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Orange" IsVisible="{Binding Selected}"></Grid>-->
+                                        <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0"/>
+                                        <!--<Label Grid.Column="1" Text="{Binding Name}" FlowDirection="{Binding FlowDirection}"  FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" LineBreakMode="NoWrap"  IsVisible="{Binding Selected,Converter={converters:InverseBoolConverter}}" Margin="0,0,10,0"></Label>
+                                        <Label Grid.Column="1" Text="{Binding Name}" FlowDirection="{Binding FlowDirection}"  FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" LineBreakMode="NoWrap" TextColor="{StaticResource DarkColor}" IsVisible="{Binding Selected}" Margin="0,0,10,0"></Label>-->
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </ScrollView>
+                </Border>                
+            </Grid>
+        </Grid>
+
+    </Grid>
+    
+</ContentPage>

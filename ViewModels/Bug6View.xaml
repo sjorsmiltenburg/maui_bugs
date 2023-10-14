@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug6View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             x:DataType="viewModels:Bug6ViewModel">
+    <ScrollView BackgroundColor="Black" >
+        <VerticalStackLayout>
+            <Label Text="Update Collectionview Span"/>
+            <HorizontalStackLayout>
+                <Button Text="Span=4" Command="{Binding Span4Command}"/>
+                <Button Text="Span=6" Command="{Binding Span6Command}" />
+                <Image Source="https://source.unsplash.com/random/200x200?sig=1" BackgroundColor="Yellow" WidthRequest="200" HeightRequest="200"/>
+            </HorizontalStackLayout>
+
+            <CollectionView
+                ItemsSource="{Binding MyGroupedItems2}"                 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="Fill" 
+                Margin="0" 
+                IsGrouped="True"    
+                
+                ItemsLayout="{Binding MyItemsLayout}"
+                >                
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate x:DataType="viewModels:MyGroupedItemsViewModel">                        
+                        <Label Text="{Binding Name}" Margin="0" Padding="0" FontSize="Large" TextColor="Teal"/>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate >
+                        <viewModels:Bug6ItemView></viewModels:Bug6ItemView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
