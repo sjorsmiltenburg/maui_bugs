@@ -20,10 +20,10 @@
             <Button Text="Reload items" Command="{Binding ReloadListCommand}"/>
         </VerticalStackLayout>
 
-
         <ScrollView Grid.Row="1" Orientation="Vertical" >
-            <FlexLayout BindableLayout.ItemsSource="{Binding FlexItemsObservableCollection}" Direction="Column" Wrap="NoWrap" JustifyContent="SpaceBetween"  HorizontalOptions="Center" >
-                <BindableLayout.ItemTemplate>
+            <CollectionView ItemsSource="{Binding FlexItemsObservableCollection}"                             
+                            HorizontalOptions="Center" >
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid x:DataType="viewModels:Bug7ItemViewModel" >
                             <Grid.ColumnDefinitions>
@@ -33,13 +33,13 @@
                             <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0"/>
                         </Grid>
                     </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </ScrollView>
 
         <ScrollView Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
-            <FlexLayout BindableLayout.ItemsSource="{Binding FlexItemsList}" Direction="Column" Wrap="NoWrap" JustifyContent="SpaceBetween"  HorizontalOptions="Center" >
-                <BindableLayout.ItemTemplate>
+            <CollectionView ItemsSource="{Binding FlexItemsList}" HorizontalOptions="Center" >
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid x:DataType="viewModels:Bug7ItemViewModel" >
                             <Grid.ColumnDefinitions>
@@ -49,8 +49,8 @@
                             <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0"/>
                         </Grid>
                     </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </ScrollView>
 
 
