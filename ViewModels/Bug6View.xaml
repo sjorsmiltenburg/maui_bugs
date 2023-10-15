@@ -18,10 +18,8 @@
                 HorizontalOptions="CenterAndExpand" 
                 VerticalOptions="Fill" 
                 Margin="0" 
-                IsGrouped="True"    
-                
-                ItemsLayout="{Binding MyItemsLayout}"
-                >                
+                IsGrouped="True"                
+                ItemsLayout="{Binding MyItemsLayout}"                >                
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate x:DataType="viewModels:MyGroupedItemsViewModel">                        
                         <Label Text="{Binding Name}" Margin="0" Padding="0" FontSize="Large" TextColor="Teal"/>

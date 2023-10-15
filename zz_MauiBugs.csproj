@@ -63,12 +63,15 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-rc.2.9373" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.0-rc.2.9373" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0-rc.1.23419.4" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewModels\Bug8View.xaml.cs">
+	    <DependentUpon>Bug8View.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ViewModels\Bug7View.xaml.cs">
 	    <DependentUpon>Bug7View.xaml</DependentUpon>
 	  </Compile>
@@ -99,6 +102,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewModels\Bug8View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\Bug7View.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
