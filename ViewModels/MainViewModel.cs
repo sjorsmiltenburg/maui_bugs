@@ -16,8 +16,8 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 1", typeof(Bug1ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 2", typeof(Bug2ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 3", typeof(Bug3ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 4", typeof(Bug4ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 5", typeof(Bug5ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 4 - fixed", typeof(Bug4ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 5 - fixed", typeof(Bug5ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 6", typeof(Bug6ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 7", typeof(Bug7ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 8", typeof(Bug8ViewModel)));
