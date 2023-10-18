@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug9View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             x:DataType="viewModels:Bug9ViewModel">
+    <VerticalStackLayout>
+        <Label Text="The fontsize of a label with text is not the same as the fontsize of a label with formattedtext"/>
+        <Label Margin="20,0,20,0" Text="This is a sample text" TextColor="LightGray" FontSize="Large"/>
+        <Label Margin="20,0,20,0" TextColor="LightGray" >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="This " FontSize="Large"></Span>
+                    <Span Text="is"  TextDecorations="Underline" FontSize="Large"/>
+                    <Span Text=" a sample text" FontSize="Large"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+    </VerticalStackLayout>
+
+</ContentPage>
