@@ -22,6 +22,7 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 7", typeof(Bug7ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 8", typeof(Bug8ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 9", typeof(Bug9ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 10 - AnimationManager not set yet", typeof(Bug10ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {

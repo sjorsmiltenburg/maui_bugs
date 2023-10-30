@@ -2,27 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              NavigationPage.HasNavigationBar="False"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
              x:Class="zz_MauiBugs.MainView">
 
     <ScrollView BackgroundColor="Black">
-        <HorizontalStackLayout>
-            <VerticalStackLayout>
-                <FlexLayout BindableLayout.ItemsSource="{Binding MenuOptions}" Direction="Column" >
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <Border Stroke="White" StrokeThickness="1"  Padding="5">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="10"/>
-                                </Border.StrokeShape>
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TappedCommand}"/>
-                                </Border.GestureRecognizers>
+
+        <VerticalStackLayout>
+            <FlexLayout BindableLayout.ItemsSource="{Binding MenuOptions}" Direction="Column" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="White" StrokeThickness="1"  Padding="5">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"/>
+                            </Border.StrokeShape>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TappedCommand}"/>
+                            </Border.GestureRecognizers>
                             <Label Text="{Binding Name}" TextColor="White"/>
-                            </Border>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </FlexLayout>
-            </VerticalStackLayout>            
-        </HorizontalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+            
+            
+            <!-- if you uncomment this line you will get the bug mentioned in BUG 10 -->
+            <!--<viewModels:MyAnimatedContentView/>-->
+        </VerticalStackLayout>
+
     </ScrollView>
 </ContentPage>

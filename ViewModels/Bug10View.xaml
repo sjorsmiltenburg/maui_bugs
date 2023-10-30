@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug10View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             >
+    <VerticalStackLayout>
+        <Label Text="I have a contentview which is animated. The contentview works when used in a non-first loaded page, like this one. But if you uncomment it from the MainView.xaml (the first page loaded, you will see an exception "/>
+        <Label Text="System.ArgumentException: 'Unable to find IAnimationManager for 'zz_MauiBugs.ViewModels.MyAnimatedContentView'. (Parameter 'animatable')'"/>
+        <viewModels:MyAnimatedContentView/>
+    </VerticalStackLayout>
+
+</ContentPage>
