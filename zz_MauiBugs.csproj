@@ -69,6 +69,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewModels\Bug11View.xaml.cs">
+	    <DependentUpon>Bug11View.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ViewModels\MyAnimatedContentView.xaml.cs">
 	    <DependentUpon>MyAnimatedContentView.xaml</DependentUpon>
 	  </Compile>
@@ -111,6 +114,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewModels\Bug11View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\MyAnimatedContentView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
