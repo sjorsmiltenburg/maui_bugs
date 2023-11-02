@@ -7,7 +7,7 @@ public partial class Bug12View : ContentPage
     public Bug12View()
     {
         InitializeComponent();
-        _cutLength = 0;
+        _wantedCutLength = 20;
         UpdateLabel();
     }
 
@@ -16,29 +16,29 @@ public partial class Bug12View : ContentPage
         Debugger.Break();
     }
 
-    private int _cutLength;
+    private int _wantedCutLength;
     public void UpdateLabel()
     {
         MyLabel.FormattedText = null;
 
-        string text = @"1
-2";
+        string text = @"Lola heeft een prachtige tekening gemaakt.
+'Papa, mama kijk eens'";
 
-        _cutLength++;
-        CutCharacterLabel.Text = _cutLength.ToString(); ;
+        _wantedCutLength++;
+        WantCutCharacterLabel.Text = _wantedCutLength.ToString(); ;
 
-        //FormattedString result = new FormattedString();
-        //var sub = text.Substring(0, 5);
-        //result.Spans.Add(new Span() { Text = sub, TextDecorations = TextDecorations.Underline });
-        //var sub2 = text.Substring(5);
-        //result.Spans.Add(new Span() { Text = sub2 });
-        //MyLabel.FormattedText = result;
+        FormattedString result = new FormattedString();
+        var sub = text.Substring(0, 5);
+        result.Spans.Add(new Span() { Text = sub, TextDecorations = TextDecorations.Underline });
+        var sub2 = text.Substring(5);
+        result.Spans.Add(new Span() { Text = sub2 });
+        MyLabel.FormattedText = result;
         MyLabel.Text = text;
 
         //cut text at different position
 
         FormattedString result2 = new FormattedString();
-        if (_cutLength == 0)
+        if (_wantedCutLength == 0)
         {
             var fs = new FormattedString();
             fs.Spans.Add(new Span() { Text = text });
@@ -46,16 +46,18 @@ public partial class Bug12View : ContentPage
         }
         else
         {
-            var actualCutPos = GetCutLength(_cutLength, text);
-            var sub3 = text.Substring(0, actualCutPos);
-            result2.Spans.Add(new Span() { Text = sub3, TextDecorations = TextDecorations.Underline });
-            var sub4 = text.Substring(actualCutPos);
+            var actualCutLength = GetCutLength(_wantedCutLength, text);
+            NotCuttingOnWanted.IsVisible = actualCutLength != _wantedCutLength;
+            ActualCutCharacterLabel.Text = actualCutLength.ToString();
+            var sub3 = text.Substring(0, actualCutLength);
+            result2.Spans.Add(new Span() { Text = sub3, TextDecorations = TextDecorations.Underline }); //IF YOU REMOVE THE UNDERLINE, THE VERTICAL SHIFTING PROBLEM STILL PERSISTS
+            var sub4 = text.Substring(actualCutLength);
             result2.Spans.Add(new Span() { Text = sub4 });
             MyLabel2.FormattedText = result2;
         }
 
     }
-    //linebreak: char0: \r char1: \n char2: \
+    //linebreak: \r\n
 
     public int GetCutLength(int wantedLength, string input)
     {

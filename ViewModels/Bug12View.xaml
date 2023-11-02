@@ -17,15 +17,19 @@
         </Grid>
         <Button Text="Toggle Underline" Clicked="Button_Clicked"/>
 
-        <HorizontalStackLayout >
-            <Label Text="Cutting string at character:" FontSize="20"></Label>
-            <Label x:Name="CutCharacterLabel" FontSize="20"/>
-        </HorizontalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="Wanting to cut string at length:" FontSize="20"></Label>
+            <Label x:Name="WantCutCharacterLabel" FontSize="20"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout x:Name="NotCuttingOnWanted">
+            <Label Text="Because we don't want to cut the \r\n linebreak in half we are cutting the string at length:" FontSize="20" TextColor="Red" LineBreakMode="WordWrap"></Label>
+            <Label x:Name="ActualCutCharacterLabel" FontSize="20" TextColor="Red"/>
+        </VerticalStackLayout>
 
         <Label Text="Watch the right side where the underline amount increases, the left side is for reference."/>
         <Label Text="Keep hitting the button untill you see an unwanted shift in vertical axis."/>
-        <Label Text="ON ANDROID From Cut 36-43 the problem is there, afterwards and before it is not."/>
-        <Label Text="ON WINDOWS Only exactly on Cut 43 the problem is there (much more prominent than on Android), afterwards and before it is not."/>
+        <Label Text="ON ANDROID From Cut 36-43 the problem is there, afterwards and before it is not."/>        
         <Label Text="This is not related to underline, because if you remove the underline, the problem is still there."/>
         
     </VerticalStackLayout>
