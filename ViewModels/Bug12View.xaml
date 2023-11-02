@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug12View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             >
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions="*,*">
+            <VerticalStackLayout>
+                <Label FontSize="25" LineBreakMode="WordWrap" x:Name="MyLabel" HorizontalOptions="Start" HorizontalTextAlignment="Start" TextDecorations="Underline"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1">                
+                <Label FontSize="25" LineBreakMode="WordWrap" x:Name="MyLabel2" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+            </VerticalStackLayout>            
+            
+        </Grid>
+        <Button Text="Toggle Underline" Clicked="Button_Clicked"/>
+
+        <HorizontalStackLayout >
+            <Label Text="Cutting string at character:" FontSize="20"></Label>
+            <Label x:Name="CutCharacterLabel" FontSize="20"/>
+        </HorizontalStackLayout>
+
+        <Label Text="Watch the right side where the underline amount increases, the left side is for reference."/>
+        <Label Text="Keep hitting the button untill you see an unwanted shift in vertical axis."/>
+        <Label Text="ON ANDROID From Cut 36-43 the problem is there, afterwards and before it is not."/>
+        <Label Text="ON WINDOWS Only exactly on Cut 43 the problem is there (much more prominent than on Android), afterwards and before it is not."/>
+        <Label Text="This is not related to underline, because if you remove the underline, the problem is still there."/>
+        
+    </VerticalStackLayout>
+</ContentPage>

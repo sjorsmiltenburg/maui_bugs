@@ -24,6 +24,8 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 9", typeof(Bug9ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 10 - AnimationManager not set yet", typeof(Bug10ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 11 - Tapgesture does not work on span", typeof(Bug11ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 12 - Underlining end of line creates unwanted vertical shift.", typeof(Bug12ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 13 - Android: underlining linebreak creates visual 'space' character that is underlined.", typeof(Bug13ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {

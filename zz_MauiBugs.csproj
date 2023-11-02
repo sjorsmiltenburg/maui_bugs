@@ -69,6 +69,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewModels\Bug13View.xaml.cs">
+	    <DependentUpon>Bug13View.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ViewModels\Bug12View.xaml.cs">
+	    <DependentUpon>Bug12View.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ViewModels\Bug11View.xaml.cs">
 	    <DependentUpon>Bug11View.xaml</DependentUpon>
 	  </Compile>
@@ -114,6 +120,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewModels\Bug13View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewModels\Bug12View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\Bug11View.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

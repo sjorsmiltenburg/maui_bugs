@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug13View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             >
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions="*,*">
+            <VerticalStackLayout>
+                <Label FontSize="25" LineBreakMode="WordWrap" x:Name="MyLabel" HorizontalOptions="Center" HorizontalTextAlignment="Start" TextDecorations="Underline"/>
+                <Label Text="Label with text"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1">                
+                <Label FontSize="25" LineBreakMode="WordWrap" x:Name="MyLabel2" HorizontalOptions="Center" HorizontalTextAlignment="Start"/>
+                <Label Text="Label with FormattedString"/>
+            </VerticalStackLayout>                        
+        </Grid>        
+        
+        <Label Text="On android, the '1' seems to have a space next to it that is underlined"/>
+        <Label Text="Somehow related to the linebreak I guess"/>
+        
+    </VerticalStackLayout>
+</ContentPage>
