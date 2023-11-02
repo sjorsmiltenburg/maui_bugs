@@ -23,7 +23,7 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 8", typeof(Bug8ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 9", typeof(Bug9ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 10 - AnimationManager not set yet", typeof(Bug10ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 11 - Not all corners rounded", typeof(Bug11ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 11 - Tapgesture does not work on span", typeof(Bug11ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {

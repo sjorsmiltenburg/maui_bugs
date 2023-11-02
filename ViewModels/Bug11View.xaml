@@ -6,143 +6,56 @@
              >
     <ScrollView>
     <VerticalStackLayout>
-        <Label Text="Windows does not round all corners of the rectangle "/>
-        <Grid>
-            <Grid RowDefinitions="Auto,*">
+        <Label Text="TapGestureRecognizer does not work on span"/>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="This is a text with an "/>
+                        <Span Text="embedded URL " TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapUrlCommand}" CommandParameter="https://www.bing.com"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="to click. It has a command binding WITH parameter"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-               
-                <ScrollView Grid.Row="1" HorizontalScrollBarVisibility="Never"  HorizontalOptions="Center">
-                    <Grid HorizontalOptions="Center">
-                        <StackLayout VerticalOptions="Start" HorizontalOptions="Fill" Margin="20"  Spacing="20">
+            <Label Margin="0,20" BackgroundColor="green">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="This is a text with an "/>
+                        <Span Text="embedded URL " TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="to click. It has a command binding WITHOUT parameter"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-                            
+            <Label Margin="0,20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="This is a text with an "/>
+                        <Span Text="embedded URL " TextDecorations="Underline" >
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="to click. It has the Tapped eventhandler "/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-
-
-                           
-
-                        
-
-                     
-
-                          
-
-                            <StackLayout IsVisible="{Binding ShowPurchaseScreen}">
-                                <Border 
-                            x:Name="SubscribeSection" 
-                            BackgroundColor="{StaticResource LightColor}" 
-                            Padding="10"                                 
-                            HorizontalOptions="CenterAndExpand" 
-                            VerticalOptions="CenterAndExpand" >
-                                    <Border.StrokeShape>
-                                        <RoundRectangle CornerRadius="15"/>
-                                    </Border.StrokeShape>
-                                    <StackLayout>
-                                        <!-- In App Purchase text (subscription info)-->
-                                        <Label Text="asdfasdf" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" TextColor="{StaticResource DarkColor}"/>
-                                        <Border
-                                    BackgroundColor="White" 
-                                    Padding="10" 
-                                    HorizontalOptions="CenterAndExpand" 
-                                    VerticalOptions="CenterAndExpand">
-                                            <Border.StrokeShape>
-                                                <RoundRectangle CornerRadius="15"/>
-                                            </Border.StrokeShape>
-                                            <StackLayout>
-                                                <Label Margin="20,0,20,0" Text="asdfasd"  TextColor="{StaticResource DarkColor}" HorizontalTextAlignment="Center"/>
-                                                <Label Margin="20,0,20,0" Text="asdfasd"  FontSize="Large" TextColor="{StaticResource DarkColor}" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                                                <Label Margin="20,0,20,0" Text="aser" TextColor="{StaticResource DarkColor}" HorizontalTextAlignment="Center"  />
-
-                                                <Border
-                                            BackgroundColor="{StaticResource WarningColor}" 
-                                            Padding="40,20,40,20"                                                 
-                                            HorizontalOptions="CenterAndExpand" 
-                                            VerticalOptions="CenterAndExpand" 
-                                            IsVisible="{Binding ShowInAppPurchasesNotAllowed}">
-                                                    <Border.StrokeShape>
-                                                        <RoundRectangle CornerRadius="30"/>
-                                                    </Border.StrokeShape>
-                                                    <StackLayout Orientation="Vertical">
-                                                        <Label TextColor="Black" Text="asdfasd" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
-                                                        <Label TextColor="Black" HorizontalTextAlignment="Center">
-                                                            <Label.FormattedText>
-                                                                <FormattedString>
-                                                                    <Span Text="asdfasd"></Span>
-                                                                    <Span Text="awsera" TextDecorations="Underline">
-                                                                        <Span.GestureRecognizers>
-                                                                            <TapGestureRecognizer Command="{Binding TapUrlCommand}" CommandParameter="https://www.bookabooka.com/faq" />
-                                                                        </Span.GestureRecognizers>
-                                                                    </Span>
-                                                                    <Span Text="aserase"></Span>
-                                                                </FormattedString>
-                                                            </Label.FormattedText>
-                                                        </Label>
-                                                    </StackLayout>
-                                                </Border>
-
-
-
-                                                <StackLayout Padding="20,0,20,10">
-                                                    <Label Text="123" TextColor="{StaticResource DarkColor}" FontSize="Medium"/>
-                                                    <BoxView HeightRequest="2" Color="LightGray"  HorizontalOptions="Center"></BoxView>
-                                                    <Label Text="123" TextColor="{StaticResource DarkColor}" FontSize="Medium"/>
-                                                    <BoxView HeightRequest="2" Color="LightGray"  HorizontalOptions="Center"></BoxView>
-                                                    <Label Text="123" TextColor="{StaticResource DarkColor}" FontSize="Medium"/>
-                                                </StackLayout>
-                                            </StackLayout>
-                                        </Border>
-
-                                        <Label  TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" FontSize="Medium" Text=".">
-                                        </Label>
-                                    </StackLayout>
-                                </Border>
-
-                                
-                                <Border 
-                            WidthRequest="{Binding Width, Source={x:Reference SubscribeSection}}" 
-                            BackgroundColor="{StaticResource LightColor}" 
-                            Margin="0,20,0,20" 
-                            Padding="10" 
-                            HorizontalOptions="CenterAndExpand" 
-                            VerticalOptions="CenterAndExpand" 
-                            Grid.Column="1" >
-                                    <Border.StrokeShape>
-                                        <RoundRectangle CornerRadius="15"/>
-                                    </Border.StrokeShape>
-                                    <VerticalStackLayout >
-                                        <Label Text="123" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" TextColor="{StaticResource DarkColor}"/>
-                                        
-                                        
-                                        
-                                        <Border 
-                                    WidthRequest="{Binding Width, Source={x:Reference SubscribeSection}}" 
-                                    BackgroundColor="White" 
-                                    Padding="10" 
-                                    HorizontalOptions="CenterAndExpand" 
-                                    VerticalOptions="CenterAndExpand">
-                                            <Border.StrokeShape>
-                                                <RoundRectangle CornerRadius="15"/>
-                                            </Border.StrokeShape>
-                                            <StackLayout HorizontalOptions="CenterAndExpand">
-                                                <Label Text="123" FontSize="Medium" TextColor="Black" Margin="10,0,10,0"></Label>
-                                                
-
-                                                
-                                                
-                                            </StackLayout>
-                                        </Border>
-                                        <Label  TextColor="{StaticResource LightColor}" HorizontalTextAlignment="Center" FontSize="Medium" Text=".">
-                                        </Label>
-                                    </VerticalStackLayout>
-                                </Border>
-                            </StackLayout>
-                        </StackLayout>
-                    </Grid>
-
-                </ScrollView>
-            </Grid>
-        </Grid>
-    </VerticalStackLayout>
+            <Label Text="The tappedRecognizer does work on a rectangle" Margin="0,20"/>
+            <Rectangle WidthRequest="50" HeightRequest="50" Background="blue" HorizontalOptions="Start">
+                <Rectangle.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}" />
+                </Rectangle.GestureRecognizers>
+            </Rectangle>
+        </VerticalStackLayout>        
     </ScrollView>
 
 </ContentPage>
