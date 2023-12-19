@@ -13,7 +13,7 @@
                         <Span Text="This is a text with an "/>
                         <Span Text="embedded URL " TextDecorations="Underline">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TapUrlCommand}" CommandParameter="https://www.bing.com"/>
+                                <TapGestureRecognizer Command="{Binding TapUrlCommand}" CommandParameter="https://www.bing.com"/>                                
                             </Span.GestureRecognizers>
                         </Span>
                         <Span Text="to click. It has a command binding WITH parameter"/>
@@ -27,7 +27,7 @@
                         <Span Text="This is a text with an "/>
                         <Span Text="embedded URL " TextDecorations="Underline">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TapCommand}" />
+                                <TapGestureRecognizer Command="{Binding TapCommand}" />                                
                             </Span.GestureRecognizers>
                         </Span>
                         <Span Text="to click. It has a command binding WITHOUT parameter"/>
@@ -41,12 +41,15 @@
                         <Span Text="This is a text with an "/>
                         <Span Text="embedded URL " TextDecorations="Underline" >
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>                                
                             </Span.GestureRecognizers>
                         </Span>
                         <Span Text="to click. It has the Tapped eventhandler "/>
                     </FormattedString>
                 </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <SwipeGestureRecognizer Swiped="SwipeGestureRecognizer_Swiped"/>
+                </Label.GestureRecognizers>
             </Label>
 
             <Label Margin="0,20" Text="This is a label without formattedtext, here it does work">

@@ -13,4 +13,9 @@ public partial class Bug11View : ContentPage
     {
         Debugger.Break();
     }
+
+    private void SwipeGestureRecognizer_Swiped(object sender, SwipedEventArgs e)
+    {
+        Debugger.Break();
+    }
 }

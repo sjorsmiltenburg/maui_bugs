@@ -5,7 +5,6 @@ using zz_MauiBugs.Messages;
 
 namespace zz_MauiBugs.ViewModels
 {
-
     public class MainViewModel : BaseViewModel
     {
         private readonly INavService _navService;
@@ -18,7 +17,7 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 3", typeof(Bug3ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 4 - fixed", typeof(Bug4ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 5 - fixed", typeof(Bug5ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 6", typeof(Bug6ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 6 - fix reverted, so still broken - update itemslayout of collection view not working", typeof(Bug6ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 7", typeof(Bug7ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 8", typeof(Bug8ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 9", typeof(Bug9ViewModel)));
@@ -44,7 +43,6 @@ namespace zz_MauiBugs.ViewModels
                 OnPropertyChanged();
             }
         }
-
     }
 
     public class MenuOption
@@ -69,6 +67,5 @@ namespace zz_MauiBugs.ViewModels
                 });
             }
         }
-
     }
 }
