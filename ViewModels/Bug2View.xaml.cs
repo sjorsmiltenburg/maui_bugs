@@ -64,15 +64,16 @@ public partial class Bug2View : ContentPage
             "y" + Environment.NewLine +
             "z" + Environment.NewLine;
 
-
         WeakReferenceMessenger.Default.Register<Bug2Message>(this, (r, m) =>
         {
             Application.Current.Dispatcher.DispatchAsync(async () =>
             {
                 try
                 {
+                    //this is where the bug occurs
                     await MyScrollView.ScrollToAsync(0, 0, false);
-                    //THE FOLLOWING CODE DOES NOT GET EXECUTED
+
+                    //THE FOLLOWING CODE DOES NOT GET EXECUTED UNTILL YOU SCROLL MANUALLY AND LEAVE THE SCROLLBAR IN A POSITION > 0
                     MyLabel.Text = "The text is successfully changed";
                 }
                 catch (Exception ex)
@@ -81,6 +82,30 @@ public partial class Bug2View : ContentPage
                     Debugger.Break();
                 }
             });
+        });
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        //this works
+        MyScrollView.ScrollToAsync(0, 0, true);
+        MyLabel.Text = "The text is successfully changed";
+    }
+
+    private void Button_Clicked_2(object sender, EventArgs e)
+    {
+        //this does not work
+        Application.Current.Dispatcher.DispatchAsync(async () =>
+        {
+            try
+            {
+                await MyScrollView.ScrollToAsync(0, 0, true);
+                MyLabel.Text = "The text is successfully changed";
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+            }
         });
     }
 }

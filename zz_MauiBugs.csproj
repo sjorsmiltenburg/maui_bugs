@@ -60,15 +60,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewModels\Bug14.xaml.cs">
+	    <DependentUpon>Bug14.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ViewModels\Bug13View.xaml.cs">
 	    <DependentUpon>Bug13View.xaml</DependentUpon>
 	  </Compile>
@@ -120,6 +123,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewModels\Bug14.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewModels\Bug13View.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

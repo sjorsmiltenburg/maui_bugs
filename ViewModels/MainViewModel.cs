@@ -13,7 +13,7 @@ namespace zz_MauiBugs.ViewModels
         public MainViewModel(INavService navService)
         {
             MenuOptions.Add(new MenuOption("Bug 1", typeof(Bug1ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 2", typeof(Bug2ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 2 - ScrollTo hangs code", typeof(Bug2ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 3", typeof(Bug3ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 4 - fixed", typeof(Bug4ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 5 - fixed", typeof(Bug5ViewModel)));
@@ -25,6 +25,7 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 11 - Tapgesture does not work on span", typeof(Bug11ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 12 - Android: certain spans create unwanted vertical shift in text.", typeof(Bug12ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 13 - Android: underlining linebreak creates visual 'space' character that is underlined.", typeof(Bug13ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 14 - Windows: scrollto does not work.", typeof(Bug14ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {
