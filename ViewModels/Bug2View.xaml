@@ -5,14 +5,14 @@
 
     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,*" BackgroundColor="Gray">
 
-        <Label TextColor="White" Text="Bug2 - ScrollTo eats up the callstack without an exception" Grid.ColumnSpan="2"/>
-        <VerticalStackLayout Grid.Column="1" Grid.Row="1">            
-            <Label TextColor="White" Text="Press the button before scrolling - nothing happens, the code after ScrollTo is not executed untill you manually scroll. &#x0a; Scroll after pressing the button -> the text gets update (so it seems code execution is hanging on somthing). &#x0a; If you first scroll and then press the button, it works, but only if you didn't leave the scrollbar at the top." />
-            <Button  Command="{Binding Bug2Command}" Text="Scroll activated through message" WidthRequest="250" HorizontalOptions="Start"/>
-            <Label TextColor="White" Text="Here we directly call ScrollTo, and it works" />
-            <Button  Text="Direct button " Clicked="Button_Clicked" WidthRequest="250" HorizontalOptions="Start"/>
+        <Label TextColor="White" Text="Bug2 - ScrollTo eats up the callstack without an exception" Grid.ColumnSpan="2" />
+        <VerticalStackLayout Grid.Column="1" Grid.Row="1">
+            <Label TextColor="White" Text="Press the button before scrolling - nothing happens, the code after ScrollTo is not executed untill you manually scroll. &#x0a; Scroll after pressing the button -> the text gets updated (so it seems code execution is hanging on something). &#x0a; If you first scroll and then press the button, it works, but only if you didn't leave the scrollbar at the top." />
+            <Button  Command="{Binding Bug2Command}" Text="Scroll activated through message" WidthRequest="250" HorizontalOptions="Start" />
+            <Label TextColor="White" Text="Here we directly call ScrollTo, and it works as expected" />
+            <Button  Text="Direct button " Clicked="Button_Clicked" WidthRequest="250" HorizontalOptions="Start" />
             <Label TextColor="White" Text="Here we directly call ScrollTo through a Dispatcher, and it does not work (like described above)" />
-            <Button  Text="Direct button " Clicked="Button_Clicked_2" WidthRequest="250"  HorizontalOptions="Start"/>
+            <Button  Text="Direct button " Clicked="Button_Clicked_2" WidthRequest="250"  HorizontalOptions="Start" />
         </VerticalStackLayout>
 
         <ScrollView  Grid.Row="1" x:Name="MyScrollView" VerticalScrollBarVisibility="Always" MaximumHeightRequest="70" WidthRequest="150" BackgroundColor="LightCoral" VerticalOptions="Start">

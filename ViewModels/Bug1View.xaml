@@ -4,34 +4,33 @@
              x:Class="zz_MauiBugs.ViewModels.Bug1View">
     <ScrollView BackgroundColor="Black">
         <VerticalStackLayout>
-        <Label 
+            <Label
             TextColor="White"
-            Text="Bug1 - Updating the fontfamily property of a label does not work if the FormattedText property is used to set the text"
-            VerticalOptions="Center" 
+            Text="Bug 1 - Updating the fontfamily property of a label does not work if the FormattedText property is used to set the text"
+            VerticalOptions="Center"
             HorizontalOptions="Center" />
 
-        <Button Command="{Binding ChangeFontCommand}" Text="Change the font" WidthRequest="150"></Button>
-        <Border Stroke="White" StrokeThickness="1" BackgroundColor="Black">
-            <VerticalStackLayout>
-                <Label Text="This sample shows a font being changed by setting the fontfamily for each span of a formattedtext property" TextColor="White"/>
-                <Label x:Name="MyChangeFontFormattedTextCorrectLabel" />
-            </VerticalStackLayout>
-        </Border>
+            <Button Command="{Binding ChangeFontCommand}" Text="Change the font" WidthRequest="150"></Button>
+            <Border Stroke="White" StrokeThickness="1" BackgroundColor="Black">
+                <VerticalStackLayout>
+                    <Label Text="This sample shows a font being changed by setting the fontfamily for each span of a formattedtext property" TextColor="White" />
+                    <Label x:Name="MyChangeFontFormattedTextCorrectLabel" />
+                </VerticalStackLayout>
+            </Border>
 
             <Border Stroke="White" StrokeThickness="1" BackgroundColor="Black">
-            <VerticalStackLayout>
-                    <Label Text="This sample shows a font NOT being changed by setting the fontfamily on the label, while the other properties of the label (lineheight / color ARE changed)" TextColor="White"/>
-                <Label x:Name="MyChangeFontFormattedTextWrongLabel" />
-            </VerticalStackLayout>
-        </Border>
+                <VerticalStackLayout>
+                    <Label Text="This sample shows a font NOT being changed by setting the fontfamily on the label, while the other properties of the label (lineheight / color ARE changed)" TextColor="White" />
+                    <Label x:Name="MyChangeFontFormattedTextWrongLabel" />
+                </VerticalStackLayout>
+            </Border>
 
             <Border Stroke="White" StrokeThickness="1" BackgroundColor="Black">
-            <VerticalStackLayout>
+                <VerticalStackLayout>
                     <Label Text="When you do not use the FormattedText property but the Text property of the label, the fontfamily does get applied" TextColor="White"></Label>
-                <Label x:Name="MyChangeNormalTextFont" ></Label>
-            </VerticalStackLayout>
-        </Border>
-
+                    <Label x:Name="MyChangeNormalTextFont" ></Label>
+                </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

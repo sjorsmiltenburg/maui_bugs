@@ -4,29 +4,29 @@
              x:Class="zz_MauiBugs.ViewModels.Bug6View"
              xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
              x:DataType="viewModels:Bug6ViewModel">
-    <ScrollView BackgroundColor="Black" >
+    <ScrollView BackgroundColor="Black">
         <VerticalStackLayout>
-            <Label Text="Update Collectionview Span"/>
+            <Label Text="Update Collectionview Span" />
             <HorizontalStackLayout>
-                <Button Text="Span=4" Command="{Binding Span4Command}"/>
-                <Button Text="Span=6" Command="{Binding Span6Command}" />
-                <Image Source="https://source.unsplash.com/random/200x200?sig=1" BackgroundColor="Yellow" WidthRequest="200" HeightRequest="200"/>
+                <Button Text="Set Itemslayout to Span=4" Command="{Binding Span4Command}" />
+                <Button Text="Set Itemslayout to Span=6" Command="{Binding Span6Command}" />
             </HorizontalStackLayout>
 
             <CollectionView
-                ItemsSource="{Binding MyGroupedItems2}"                 
-                HorizontalOptions="CenterAndExpand" 
-                VerticalOptions="Fill" 
-                Margin="0" 
-                IsGrouped="True"                
-                ItemsLayout="{Binding MyItemsLayout}"                >                
+                x:Name="MyCollectionView"
+                ItemsSource="{Binding MyGroupedItems2}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Fill"
+                Margin="0"
+                IsGrouped="True"
+                ItemsLayout="{Binding MyItemsLayout}">
                 <CollectionView.GroupHeaderTemplate>
-                    <DataTemplate x:DataType="viewModels:MyGroupedItemsViewModel">                        
-                        <Label Text="{Binding Name}" Margin="0" Padding="0" FontSize="Large" TextColor="Teal"/>
+                    <DataTemplate x:DataType="viewModels:MyGroupedItemsViewModel">
+                        <Label Text="{Binding Name}" Margin="0" Padding="0" FontSize="Large" TextColor="Teal" />
                     </DataTemplate>
                 </CollectionView.GroupHeaderTemplate>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate >
+                    <DataTemplate>
                         <viewModels:Bug6ItemView></viewModels:Bug6ItemView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

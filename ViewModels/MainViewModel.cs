@@ -12,17 +12,17 @@ namespace zz_MauiBugs.ViewModels
 
         public MainViewModel(INavService navService)
         {
-            MenuOptions.Add(new MenuOption("Bug 1", typeof(Bug1ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 1 - Updating the fontfamily property of a label does not work if the FormattedText property is used to set the text", typeof(Bug1ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 2 - ScrollTo hangs code", typeof(Bug2ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 3", typeof(Bug3ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 3 - Provide better exception message when binding a normal list to a collecitonview that has IsGrouped=True\"", typeof(Bug3ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 4 - fixed", typeof(Bug4ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 5 - fixed", typeof(Bug5ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 6 - fix reverted, so still broken - update itemslayout of collection view not working", typeof(Bug6ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 6 - update itemslayout of collection view not working", typeof(Bug6ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 7", typeof(Bug7ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 8", typeof(Bug8ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 9", typeof(Bug9ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 10 - AnimationManager not set yet", typeof(Bug10ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 11 - Tapgesture does not work on span", typeof(Bug11ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 11 - FIXED Tapgesture does not work on span", typeof(Bug11ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 12 - Android: certain spans create unwanted vertical shift in text.", typeof(Bug12ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 13 - Android: underlining linebreak creates visual 'space' character that is underlined.", typeof(Bug13ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 14 - Windows: scrollto does not work.", typeof(Bug14ViewModel)));

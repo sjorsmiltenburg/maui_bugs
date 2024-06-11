@@ -26,7 +26,7 @@ public partial class Bug14View : ContentPage
 
     private void Button_Clicked_test(object sender, EventArgs e)
     {
-        MyScrollView.ScrollToAsync(test, ScrollToPosition.MakeVisible, true);
+        MyScrollView.ScrollToAsync(test, ScrollToPosition.Center, true);
     }
 
     private void Button_Clicked_PrintScrollPos(object sender, EventArgs e)

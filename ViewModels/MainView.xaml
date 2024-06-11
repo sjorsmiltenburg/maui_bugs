@@ -8,26 +8,24 @@
     <ScrollView BackgroundColor="Black">
 
         <VerticalStackLayout>
-            <FlexLayout BindableLayout.ItemsSource="{Binding MenuOptions}" Direction="Column" >
+            <FlexLayout BindableLayout.ItemsSource="{Binding MenuOptions}" Direction="Column">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Border Stroke="White" StrokeThickness="1"  Padding="5">
                             <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="10"/>
+                                <RoundRectangle CornerRadius="10" />
                             </Border.StrokeShape>
                             <Border.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding TappedCommand}"/>
+                                <TapGestureRecognizer Command="{Binding TappedCommand}" />
                             </Border.GestureRecognizers>
-                            <Label Text="{Binding Name}" TextColor="White"/>
+                            <Label Text="{Binding Name}" TextColor="White" />
                         </Border>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </FlexLayout>
-            
-            
-            <!-- if you uncomment this line you will get the bug mentioned in BUG 10 -->
-            <!--<viewModels:MyAnimatedContentView/>-->
-        </VerticalStackLayout>
 
+            <!-- if you uncomment this line you will get the bug mentioned in BUG 10 -->
+            <!--<viewModels:MyAnimatedContentView />-->
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

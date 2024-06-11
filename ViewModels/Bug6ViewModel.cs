@@ -7,13 +7,11 @@ namespace zz_MauiBugs.ViewModels
     {
         public ObservableCollection<Bug6GroupedItemsViewModel> MyGroupedItems2 { get; set; } = new ObservableCollection<Bug6GroupedItemsViewModel>();
 
-        int _random = 0;
         private GridItemsLayout _myItemsLayout;
 
         private string GetRandomImageUrl()
         {
-            _random++;
-            return "https://source.unsplash.com/random/200x200?sig=" + _random;
+            return "https://picsum.photos/200/200";
         }
 
         public GridItemsLayout MyItemsLayout
@@ -56,13 +54,11 @@ namespace zz_MauiBugs.ViewModels
 
             var group1 = new Bug6GroupedItemsViewModel() { Name = "Group 1" };
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 8; i++)
             {
                 group1.Add(new Bug6ItemViewModel(GetRandomImageUrl()));
-
             }
             MyGroupedItems2.Add(group1);
-
 
             var group2 = new Bug6GroupedItemsViewModel() { Name = "2" };
             for (int i = 0; i < 35; i++)
@@ -70,7 +66,6 @@ namespace zz_MauiBugs.ViewModels
                 group2.Add(new Bug6ItemViewModel(GetRandomImageUrl()));
             }
             MyGroupedItems2.Add(group2);
-
         }
     }
 }
