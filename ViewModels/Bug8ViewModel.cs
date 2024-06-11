@@ -6,6 +6,7 @@ namespace zz_MauiBugs.ViewModels
     public class Bug8ViewModel : BaseViewModel
     {
         public ObservableCollection<Bug6ItemViewModel> FlexItemsObservableCollection { get; set; } = new ObservableCollection<Bug6ItemViewModel>();
+
         public List<Bug6ItemViewModel> FlexItemsList
         {
             get => _flexItemsList;
@@ -15,6 +16,7 @@ namespace zz_MauiBugs.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public Bug8ViewModel()
         {
             ReloadItems();
@@ -33,13 +35,11 @@ namespace zz_MauiBugs.ViewModels
             FlexItemsList = newList;
         }
 
-        int _random = 0;
         private List<Bug6ItemViewModel> _flexItemsList = new List<Bug6ItemViewModel>();
 
         private string GetRandomImageUrl()
         {
-            _random++;
-            return "https://source.unsplash.com/random/200x200?sig=" + _random;
+            return "https://picsum.photos/200/200";
         }
 
         public ICommand ReloadListCommand
@@ -49,6 +49,17 @@ namespace zz_MauiBugs.ViewModels
                 return new Command(() =>
                 {
                     ReloadItems();
+                });
+            }
+        }
+
+        public ICommand CallGCCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    GC.Collect();
                 });
             }
         }

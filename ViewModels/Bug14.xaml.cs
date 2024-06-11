@@ -9,40 +9,48 @@ public partial class Bug14View : ContentPage
         InitializeComponent();
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private void ScrollToBegin(object sender, EventArgs e)
     {
+        //this does what i expect
         Scroll(0);
     }
 
-    private void Button_Clicked_1(object sender, EventArgs e)
+    private void ScrollToMiddle(object sender, EventArgs e)
     {
         Scroll(0.5d);
     }
 
-    private void Button_Clicked_2(object sender, EventArgs e)
+    private void ScrollToEnd(object sender, EventArgs e)
     {
         Scroll(1);
     }
 
-    private void Button_Clicked_test(object sender, EventArgs e)
+    private void ScrollToLabel(object sender, EventArgs e)
     {
-        MyScrollView.ScrollToAsync(test, ScrollToPosition.Center, true);
+        //this does what i expect
+        MyScrollView.ScrollToAsync(Working, ScrollToPosition.End, true);
+    }
+
+    private void ScrollToSpan(object sender, EventArgs e)
+    {
+        //BUG this does not what i expect
+        MyScrollView.ScrollToAsync(NotWorking, ScrollToPosition.End, true);
     }
 
     private void Button_Clicked_PrintScrollPos(object sender, EventArgs e)
     {
-        reportLabel.Text = "DesiredSize.Width=" + MyScrollView.DesiredSize.Width + " Scrollpos = " + MyScrollView.ScrollX;
+        reportLabel.Text = "DesiredSize.Height=" + MyScrollView.DesiredSize.Height + " Scrollpos = " + MyScrollView.ScrollY;
     }
 
-    private async Task Scroll(double x)
+    private async Task Scroll(double y)
     {
         var sb = new StringBuilder();
-        sb.AppendLine($"ScrollPosition before action: {MyScrollView.ScrollX}");
-        var scrollpos = MyScrollView.DesiredSize.Width * x;
+        sb.AppendLine($"ScrollPosition before action: {MyScrollView.ScrollY}");
+        var scrollposY = MyScrollView.ContentSize.Height * y;
 
-        await MyScrollView.ScrollToAsync(scrollpos, 0, false);
+        await MyScrollView.ScrollToAsync(0, scrollposY, false);
 
-        sb.AppendLine($"ScrollPosition after action: {MyScrollView.ScrollX}");
+        sb.AppendLine($"ScrollPosition after action: {MyScrollView.ScrollY}");
         reportLabel.Text = sb.ToString();
     }
 }

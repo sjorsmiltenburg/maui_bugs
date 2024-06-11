@@ -6,57 +6,55 @@
              x:DataType="viewModels:Bug8ViewModel">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <VerticalStackLayout>
-            <Label Text="I would expect the garbage collector to stop memory to keep increasing when reloading lists"/>
-            <Label Text="Left flexlayout is bound to observablecollection, right flexlayout to list"/>
-            <Button Text="Reload items" Command="{Binding ReloadListCommand}"/>
+            <Label Text="https://github.com/dotnet/maui/issues/18030" />
+            <Label Text="Hit the Reload items button multiple times. The memory keeps going up. Hitting GC.Collect does not seem to have an effect." />
+            <Label Text="Left collectionview is bound to observablecollection, right collectionview is bound to list" />
+            <HorizontalStackLayout>
+                <Button Text="Reload items" Command="{Binding ReloadListCommand}" />
+                <Button Text="Call GC.Collect" Command="{Binding CallGCCommand}" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
 
-        <ScrollView Grid.Row="1" Orientation="Vertical" >
-            <CollectionView ItemsSource="{Binding FlexItemsObservableCollection}"                             
-                            HorizontalOptions="Center" >
+        <ScrollView Grid.Row="1" Orientation="Vertical">
+            <CollectionView ItemsSource="{Binding FlexItemsObservableCollection}"
+                            HorizontalOptions="Center">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid x:DataType="viewModels:Bug7ItemViewModel" >
+                        <Grid x:DataType="viewModels:Bug7ItemViewModel">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0"/>
+                            <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
 
-        <ScrollView Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
-            <CollectionView ItemsSource="{Binding FlexItemsList}" HorizontalOptions="Center" >
+        <ScrollView Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <CollectionView ItemsSource="{Binding FlexItemsList}" HorizontalOptions="Center">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid x:DataType="viewModels:Bug7ItemViewModel" >
+                        <Grid x:DataType="viewModels:Bug7ItemViewModel">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0"/>
+                            <Image Grid.Column="0" HeightRequest="64" WidthRequest="64" Source="{Binding ImageUrl}" HorizontalOptions="Center" Margin="10,0" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-
-
-
-
-
     </Grid>
-
 </ContentPage>

@@ -18,14 +18,14 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 4 - fixed", typeof(Bug4ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 5 - fixed", typeof(Bug5ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 6 - update itemslayout of collection view not working", typeof(Bug6ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 7", typeof(Bug7ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 8", typeof(Bug8ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 9", typeof(Bug9ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 7 - Rowdefenition *,Auto,* allows flexlayout to go offscreen", typeof(Bug7ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 8 - Memoryleak collectionview", typeof(Bug8ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 9 - The fontsize of a label with text is not the same as the fontsize of a label with formattedtext", typeof(Bug9ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 10 - AnimationManager not set yet", typeof(Bug10ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 11 - FIXED Tapgesture does not work on span", typeof(Bug11ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 12 - Android: certain spans create unwanted vertical shift in text.", typeof(Bug12ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 13 - Android: underlining linebreak creates visual 'space' character that is underlined.", typeof(Bug13ViewModel)));
-            MenuOptions.Add(new MenuOption("Bug 14 - Windows: scrollto does not work.", typeof(Bug14ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 14 - Windows: scrollto item works on labels but not on Span in Label.FormattedText.FormattedString.", typeof(Bug14ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {

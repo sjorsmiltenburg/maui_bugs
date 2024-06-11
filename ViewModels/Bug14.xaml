@@ -4,9 +4,98 @@
              x:Class="zz_MauiBugs.ViewModels.Bug14View"
              xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs">
     <VerticalStackLayout>
-        <Label Text="Bug: On windows, scrollto does not work" />
-        <ScrollView x:Name="MyScrollView" Orientation="Horizontal" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Always">
-            <HorizontalStackLayout>
+        <Label Text="Bug 14 - Windows: scrollto item works on labels but not on Span in Label.FormattedText.FormattedString.
+               Maybe, as a workaround, I can somehow locate the span's Y position and scroll to it by location (for instance 0.5 * ContentSize.Height" />
+        <ScrollView HeightRequest="200" x:Name="MyScrollView">
+            <StackLayout Orientation="Vertical">
+                <Label LineBreakMode="WordWrap"  WidthRequest="200">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 1 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 2 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 3 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 4 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 5 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 6 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 7 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 8 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 9 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 10 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 11 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 12 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 13 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 14 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 15 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 16 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 17 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 18 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 19 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 20 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 21 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 22 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 23 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 24 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 25 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 26 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 27 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 28 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 29 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 30 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 31 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 32 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 33 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 34 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 35 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 36 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 37 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 38 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 39 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 40 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 41 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 42 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 43 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 44 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 45 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 46 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 47 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 49 " />
+                            <Span Text="THIS DOES NOT WORK AS IT IS THE NAME OF A SPAN INSIDE A FORMATTEDSTRING " x:Name="NotWorking" />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 50 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 51 " />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label LineBreakMode="WordWrap" x:Name="Working"  WidthRequest="200">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="THIS WORKS AS IT IS SCROLLING TO A LABEL" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label LineBreakMode="WordWrap"  WidthRequest="200">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 1 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 2 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 3 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 4 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 5 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 6 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 7 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 8 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 9 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 10 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 11 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 12 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 13 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 49 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 50 " />
+                            <Span Text="dit is een langere tekst dan dat er net stond dus ik hoop dat dit een beetje schermvullend wordt span 51 " />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <!--<HorizontalStackLayout>
                 <Rectangle Background="Green" HeightRequest="50" WidthRequest="150" />
                 <Rectangle Background="Red" HeightRequest="50" WidthRequest="150" />
                 <Rectangle Background="Purple" HeightRequest="50" WidthRequest="150" />
@@ -31,14 +120,15 @@
                 <Rectangle Background="Red" HeightRequest="50" WidthRequest="150" />
                 <Rectangle Background="Purple" HeightRequest="50" WidthRequest="150" x:Name="test" />
                 <Rectangle Background="Yellow" HeightRequest="50" WidthRequest="150" />
-            </HorizontalStackLayout>
+            </HorizontalStackLayout>-->
         </ScrollView>
 
         <HorizontalStackLayout>
-            <Button Text="Scroll To Begin" Clicked="Button_Clicked" Margin="5" />
-            <Button Text="Scroll To Middle" Clicked="Button_Clicked_1" Margin="5" />
-            <Button Text="Scroll To End" Clicked="Button_Clicked_2" Margin="5" />
-            <Button Text="Scroll To item" Clicked="Button_Clicked_test" Margin="5" />
+            <Button Text="Scroll To Begin" Clicked="ScrollToBegin" Margin="5" />
+            <Button Text="Scroll To Middle" Clicked="ScrollToMiddle" Margin="5" />
+            <Button Text="Scroll To End" Clicked="ScrollToEnd" Margin="5" />
+            <Button Text="Scroll To Label" Clicked="ScrollToLabel" Margin="5" />
+            <Button Text="BUG: Scroll To Span" Clicked="ScrollToSpan" Margin="5" />
             <Button Text="PrintScrollPos" Clicked="Button_Clicked_PrintScrollPos" Margin="5" />
         </HorizontalStackLayout>
 
