@@ -26,6 +26,7 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 12 - Android: certain spans create unwanted vertical shift in text.", typeof(Bug12ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 13 - Android: underlining linebreak creates visual 'space' character that is underlined.", typeof(Bug13ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 14 - Windows: scrollto item works on labels but not on Span in Label.FormattedText.FormattedString.", typeof(Bug14ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 16 - Resize items in collectionview.", typeof(Bug16ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {

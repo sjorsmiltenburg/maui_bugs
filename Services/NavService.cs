@@ -105,22 +105,21 @@ namespace BB.Maui.Services
         private async Task NavigateToView(Page view)
         {
             //await Device.InvokeOnMainThreadAsync(async () =>
-            await Application.Current.Dispatcher.DispatchAsync(async () =>
+
+            try
             {
-                try
+                if (view.Parent != null)
                 {
-                    if (view.Parent != null)
-                    {
-                        view.Parent = null;
-                    }
-                    await XamarinFormsNav.PushAsync(view, true);
-                    var vm = view.BindingContext;
+                    view.Parent = null;
                 }
-                catch (Exception e)
-                {
-                    Debugger.Break();
-                }
-            });
+                await XamarinFormsNav.PushAsync(view, true);
+                var vm = view.BindingContext;
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+            }
+
         }
     }
 }

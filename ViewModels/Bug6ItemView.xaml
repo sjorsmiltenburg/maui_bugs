@@ -4,7 +4,10 @@
              x:Class="zz_MauiBugs.ViewModels.Bug6ItemView"
              x:DataType="viewModels:Bug6ItemViewModel"
              xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs">
-    
-        <Image WidthRequest="200" HeightRequest="200" Source="{Binding ImageUrl}"/>
-    
+    <VerticalStackLayout>
+        <Image WidthRequest="{Binding MyWidth}" Source="{Binding ImageUrl}" Aspect="AspectFill"/>
+        <Label Text="Text" IsVisible="Visible"/>
+    </VerticalStackLayout>
+
+
 </ContentView>
