@@ -8,10 +8,11 @@
     <ScrollView BackgroundColor="Black">
 
         <VerticalStackLayout>
+            <Label Text="This is MainView"/>
             <FlexLayout BindableLayout.ItemsSource="{Binding MenuOptions}" Direction="Column">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Border Stroke="White" StrokeThickness="1"  Padding="5">
+                        <Border Stroke="White" StrokeThickness="1"  Padding="5" Margin="5">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="10" />
                             </Border.StrokeShape>

@@ -26,7 +26,9 @@ namespace zz_MauiBugs.ViewModels
             MenuOptions.Add(new MenuOption("Bug 12 - Android: certain spans create unwanted vertical shift in text.", typeof(Bug12ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 13 - Android: underlining linebreak creates visual 'space' character that is underlined.", typeof(Bug13ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 14 - Windows: scrollto item works on labels but not on Span in Label.FormattedText.FormattedString.", typeof(Bug14ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 15 - Windows: ColumnDefenition 1*,21*,1*,21*,1* behaves very weirdly.", typeof(Bug15ViewModel)));
             MenuOptions.Add(new MenuOption("Bug 16 - Resize items in collectionview.", typeof(Bug16ViewModel)));
+            MenuOptions.Add(new MenuOption("Bug 17 - [iOS] RotateTo visually rotates through the layers that are on top #30251.", typeof(Bug17ViewModel)));
 
             WeakReferenceMessenger.Default.Register<LoadViewMessage>(this, (r, m) =>
             {

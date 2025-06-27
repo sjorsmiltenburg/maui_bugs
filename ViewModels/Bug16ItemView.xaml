@@ -4,8 +4,13 @@
              x:Class="zz_MauiBugs.ViewModels.Bug16ItemView"
              x:DataType="viewModels:Bug16ItemViewModel"
              xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs">
-    <VerticalStackLayout>
+    <Border Margin="2.5">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="5,4,6,6" />
+        </Border.StrokeShape> 
+        <VerticalStackLayout>
         <Image WidthRequest="{Binding MyWidth}" Source="{Binding ImageUrl}" Aspect="AspectFill"/>
         <Label Text="Text" IsVisible="Visible"/>
     </VerticalStackLayout>
+    </Border>
 </ContentView>

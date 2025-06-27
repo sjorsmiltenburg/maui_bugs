@@ -1,16 +1,15 @@
-﻿using BB.Maui.Ioc;
-using zz_MauiBugs.ViewModels;
+﻿using zz_MauiBugs.ViewModels;
 
 namespace zz_MauiBugs
 {
     public partial class App : Application
     {
-        public App()
+        public App(IServiceProvider serviceProvider)
         {
             InitializeComponent();
 
-            var mainView = MyTinyIoc.Resolve<MainView>();
-            var mainViewModel = MyTinyIoc.Resolve<MainViewModel>();
+            var mainView = serviceProvider.GetService<MainView>();
+            var mainViewModel = serviceProvider.GetService<MainViewModel>();
             mainView.BindingContext = mainViewModel;
 
             var navigationPage = new NavigationPage(mainView);

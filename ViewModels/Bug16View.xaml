@@ -6,7 +6,9 @@
              x:DataType="viewModels:Bug16ViewModel">
     <ScrollView BackgroundColor="Black">
         <Grid RowDefinitions="Auto,Auto,*">
-            <Label Text="update items width and columns" />
+            <Label Text="update items width and columns, currently unable to recreate the crashes i am experiencing with my produciton app" />
+            <Label Text="in the meanwhile i have fixed my prodcution app, unsure what caused it, could be a border in an itemtemplate" />
+            <Label Text="another thing was sizing my app below a certain size would cause a crash. I set minimumsize as a workaround" />
             <HorizontalStackLayout Grid.Row="1">
                 <Button Text="Set Itemslayout to Span=4" x:Name="Span4" Clicked="Span4_Clicked"/>
                 <Button Text="Set Itemslayout to Span=6" x:Name="Span6" Clicked="Span6_Clicked" />
@@ -16,10 +18,11 @@
                 Grid.Row="2"
                 x:Name="MyCollectionView"
                 ItemsSource="{Binding MyItems}"
-                HorizontalOptions="Center"
+                
                 VerticalOptions="Start"                              
                 ItemsLayout="VerticalGrid,5"
-                ItemSizingStrategy="MeasureAllItems">
+                ItemSizingStrategy="MeasureAllItems"
+                HorizontalOptions="Fill"> <!-- fill is important here, center gives weird results-->
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

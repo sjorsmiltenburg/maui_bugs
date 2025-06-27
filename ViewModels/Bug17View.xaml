@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zz_MauiBugs.ViewModels.Bug17View"
+             xmlns:viewModels="clr-namespace:zz_MauiBugs.ViewModels;assembly=zz_MauiBugs"
+             x:DataType="viewModels:Bug16ViewModel">
+    <ScrollView BackgroundColor="Black">
+        <VerticalStackLayout>
+            <Label Text="When you click the button it activates a rotate on the bottom image. On Ios the rotating images pops through the image that is on top. This was not the case in Xamarin Forms." />
+            <Label Text="Issue: https://github.com/dotnet/maui/issues/30251" />
+            <AbsoluteLayout WidthRequest="400">
+                <Image x:Name="BottomImage" Source="https://www.bookabooka.com/wp-content/uploads/2023/12/nieuwsbrief-envelop-1024x794.jpg" WidthRequest="400"></Image>
+                <Image x:Name="TopImage" Source="https://www.bookabooka.com/wp-content/uploads/2020/04/AppStore_NL.png" WidthRequest="400"/>
+            </AbsoluteLayout>
+            <Button Text="Rotate" Clicked="Button_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -41,9 +41,29 @@ public partial class Bug16View : ContentPage
     {
         //MyCollectionView.IsVisible = false;        
         var vm = (this.BindingContext as Bug16ViewModel);
+
+        var imageBaseSize = 200d;
+        var imageMax = imageBaseSize * 1.5d;
+        var imageMin = imageBaseSize / 1.5d;
+
+        while (Width / (double)_spancount > imageMax || Width / (double)_spancount < imageMin)
+        {
+            if (Width / (double)_spancount > imageMax)
+            {
+                _spancount++;
+            }
+            else
+            {
+                _spancount--;
+            }
+        }
+
+        var itemWidth = Width / (double)_spancount;
+
+
         foreach (var item in vm.MyItems)
         {
-            var itemWidth = Width / (double)_spancount;
+
             item.MyWidth = itemWidth;
             Debug.WriteLine($"Control Width: {Width} / spancount {_spancount} = ItemWidth:" + itemWidth);
         }

@@ -1,10 +1,17 @@
-﻿using BB.Maui.Ioc;
+﻿
 using zz_MauiBugs;
 
 namespace BB.Maui.Services
 {
     public sealed class ViewCreationService : IViewCreationService
     {
+        private readonly IServiceProvider _serviceProvider;
+
+        public ViewCreationService(IServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider;
+        }
+
         public Page CreatePage(Type viewModelType)
         {
             var page = CreateViewInstance(viewModelType) as Page;
@@ -35,7 +42,7 @@ namespace BB.Maui.Services
                 throw new Exception($"Cannot locate view type for {viewModelType}");
             }
 
-            var result2 = MyTinyIoc.Resolve(viewType);
+            var result2 = _serviceProvider.GetService(viewType);
             if (result2 == null)
             {
                 throw new Exception(
@@ -55,7 +62,7 @@ namespace BB.Maui.Services
         public BaseViewModel CreateViewModelInstance(Type viewModelType)
         {
             //todo can we alter this method to a <T> implementation that directly returns the actual type?
-            if (!(MyTinyIoc.Resolve(viewModelType) is BaseViewModel vm))
+            if (!(_serviceProvider.GetService(viewModelType) is BaseViewModel vm))
             {
                 throw new Exception("Failed to resolve instance of viewmodel from IOC, problably not added yet");
             }
