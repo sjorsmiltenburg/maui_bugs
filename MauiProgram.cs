@@ -13,7 +13,7 @@ namespace zz_MauiBugs
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
-                .UseMauiCommunityToolkitMediaElement()
+                .UseMauiCommunityToolkitMediaElement(isAndroidForegroundServiceEnabled: false)
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
